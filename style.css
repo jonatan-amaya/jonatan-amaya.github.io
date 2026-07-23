@@ -3,18 +3,20 @@
     --primary-dark: #0b2833;
     --accent: #1976a3;
 
-    --background: #f4f7f8;
+    --background: #ffffff;
     --card: #ffffff;
 
     --text: #172126;
     --muted: #607078;
-    --border: #ccd7db;
+    --border: #dce3e6;
+
+    --soft-background: #f8fafb;
 
     --code-bg: #101a20;
     --code-text: #e6edf1;
 
-    --shadow: 0 10px 30px rgba(18, 59, 74, 0.08);
-    --shadow-hover: 0 14px 34px rgba(18, 59, 74, 0.13);
+    --shadow: 0 10px 30px rgba(18, 59, 74, 0.07);
+    --shadow-hover: 0 14px 34px rgba(18, 59, 74, 0.11);
 }
 
 /* =========================================================
@@ -145,6 +147,7 @@ img {
     color: #ffffff;
     background: var(--primary);
     border-color: var(--primary);
+
     box-shadow: 0 7px 18px rgba(18, 59, 74, 0.2);
 }
 
@@ -158,11 +161,11 @@ img {
 }
 
 .card {
+    padding: 42px;
+
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 9px;
-
-    padding: 42px;
 
     box-shadow: var(--shadow);
 
@@ -192,8 +195,10 @@ img {
 
 .profile-photo {
     display: block;
+
     width: 100%;
     aspect-ratio: 4 / 5;
+
     object-fit: cover;
     object-position: center;
 
@@ -242,12 +247,14 @@ strong {
 .item {
     margin-bottom: 32px;
     padding-bottom: 28px;
+
     border-bottom: 1px solid var(--border);
 }
 
 .item:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
+
     border-bottom: none;
 }
 
@@ -261,19 +268,32 @@ strong {
     font-size: 0.95rem;
 }
 
+.item-meta em {
+    color: var(--muted);
+}
+
+/* =========================================================
+   Material and paper buttons
+   ========================================================= */
+
 .item-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 12px;
+
+    margin-top: 14px;
 }
 
 .item-links a {
-    display: inline-block;
-    padding: 6px 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 7px 13px;
 
     color: var(--primary);
-    background: #f0f5f7;
+    background: var(--soft-background);
 
     border: 1px solid var(--border);
     border-radius: 5px;
@@ -285,17 +305,22 @@ strong {
     transition:
         background-color 0.18s ease,
         border-color 0.18s ease,
-        color 0.18s ease;
+        color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
 }
 
 .item-links a:hover {
     color: #ffffff;
     background: var(--accent);
     border-color: var(--accent);
+
+    transform: translateY(-1px);
+    box-shadow: 0 5px 13px rgba(25, 118, 163, 0.15);
 }
 
 /* =========================================================
-   Links
+   General links
    ========================================================= */
 
 .links {
@@ -330,11 +355,12 @@ pre {
 
 .tech-label {
     display: inline-block;
+
     margin: 3px 4px 3px 0;
     padding: 4px 8px;
 
     color: var(--primary-dark);
-    background: #e9f0f3;
+    background: var(--soft-background);
 
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -346,9 +372,10 @@ code {
     padding: 2px 5px;
 
     color: var(--primary-dark);
-    background: #e9f0f3;
+    background: var(--soft-background);
 
     border-radius: 4px;
+
     font-size: 0.9em;
 }
 
@@ -369,6 +396,7 @@ pre {
 
 pre code {
     padding: 0;
+
     color: inherit;
     background: transparent;
 }
@@ -380,15 +408,17 @@ pre code {
 .contact-list {
     display: grid;
     gap: 14px;
+
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
 
 .contact-list li {
     padding: 14px 16px;
 
-    background: #f7fafb;
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 6px;
 }
@@ -399,7 +429,7 @@ pre code {
 }
 
 /* =========================================================
-   Buttons
+   General buttons
    ========================================================= */
 
 .button {
@@ -428,6 +458,7 @@ pre code {
     color: #ffffff;
     background: var(--accent);
     border-color: var(--accent);
+
     transform: translateY(-2px);
 }
 
@@ -503,6 +534,7 @@ button:focus-visible {
 
     .navigation a {
         flex: 1 1 125px;
+
         min-width: 0;
         min-height: 46px;
         padding: 9px 13px;
@@ -535,6 +567,7 @@ button:focus-visible {
 
     .contact-list strong {
         display: block;
+
         min-width: 0;
         margin-bottom: 4px;
     }
@@ -551,6 +584,10 @@ button:focus-visible {
 
     .card {
         padding: 21px;
+    }
+
+    .item-links a {
+        width: 100%;
     }
 }
 
